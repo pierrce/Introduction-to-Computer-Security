@@ -1,0 +1,43 @@
+PART A
+
+Took ~15 min
+
+Password is 307049632
+
+Complexity is O(n) (Linear depending on size of number value)
+
+CODE:
+
+#!/usr/bin/env python
+
+import hashlib
+
+known_hash = "83c02558e533b6051e6d40e84bd03d19193b7090fa016b9b247f86d129d5f608"
+
+user ="ace,"
+salt = "8593018378"
+password = ""
+x = 0
+
+print("Processing...")
+
+while(known_hash != hashlib.sha256(user+password+salt).hexdigest()):
+	password = (str(x)+",")
+	x+=1
+	
+print(password)
+
+Could be made harder by making the password larger, or give it a selection larger than ten characters per position.
+Could also hash multiple times. (Like 256 times)
+
+PART B
+
+## Discussion of the current scheme
+this is using AEC using CBC mode for encryption, the badencrypt.py allows for inversions of
+message blocks as well as the injecting of whatever data into the first block. Theyhey are
+alsousing Encrypt-and-Mac for their authentication scheme which is not secure if the
+attacker can change the M, he can
+change the hash.
+
+## Suggestions for improving the scheme
+sue GCM instead of CBC and use encrypt-then-mac for the authentication scheme

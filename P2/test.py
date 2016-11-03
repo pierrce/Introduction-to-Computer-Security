@@ -1,0 +1,31 @@
+#import badencrypt
+#import baddecrypt
+import badcrypto
+import os
+
+message = \
+"""AMOUNT: $  101.00
+Originating Acct Holder: ACE
+Orgininating Acct #82675-582370954
+
+I authorized the above amount to be transferred to the account #78561-1848
+held by a UW-Student at the National Bank of the Cayman Islands.
+"""
+hash = '1d120ae83b78e11462aaccaaf332ef00801e3ddac675ec820151a893e36ffd4548fe451300a51cb055c3dd79253124c57614cc9d82052b05d22b2acad7b131f0f679d91397d651d61b115e222765613d33acfc2fa1daa641d8ddb643a4e2035f2e41cc0697f74a0f52d503060b33355a8e2d5745db0932d8bea9110644e11e461f82073d936f27072908e11613ed96bb23f6ddfe0c655bde8b5169df80e89e1b7e76429053467093906a7e143477e1f7964de4ef943f6c9599d33a334540875979cb613114437c0e12db5aad5c30441a125e17de76ffb7b2aa69e569420b0361ec55f4ea2dae1bb1da7cd0787fa558c4e47a3c0d814fcbb31212ac875e42cde8d1e46a5caf5a78053d4226c330a5dbce'
+
+badcrypto.baddecrypt(badcrypto.badencrypt('testkeyfile'),'testkeyfile')
+#python badencrypt<'testkeyfile'>
+#badencrypt('testkeyfile')
+#os.system('python baddecrypt.py testkeyfile 1d120ae83b78e11462aaccaaf332ef00801e3ddac675ec820151a893e36ffd4548fe451300a51cb055c3dd79253124c57614cc9d82052b05d22b2acad7b131f0f679d91397d651d61b115e222765613d33acfc2fa1daa641d8ddb643a4e2035f2e41cc0697f74a0f52d503060b33355a8e2d5745db0932d8bea9110644e11e461f82073d936f27072908e11613ed96bb23f6ddfe0c655bde8b5169df80e89e1b7e76429053467093906a7e143477e1f7964de4ef943f6c9599d33a334540875979cb613114437c0e12db5aad5c30441a125e17de76ffb7b2aa69e569420b0361ec55f4ea2dae1bb1da7cd0787fa558c4e47a3c0d814fcbb31212ac875e42cde8d1e46a5caf5a78053d4226c330a5dbce')
+
+#
+#
+#
+# CT=$(python badencrypt.py testkeyfile)
+# MODCT=$(python attack.py $CT)
+# python baddecrypt.py testkeyfile $MODCT
+
+# testString = "ASCII"
+#message.decode("ascii")
+
+exit(0)

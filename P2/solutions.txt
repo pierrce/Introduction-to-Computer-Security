@@ -1,0 +1,22 @@
+# Team members: UW ID #s and names - there is no special format for this.
+
+# Part A:
+
+## Recovered password
+
+## Pseudocode for attack
+
+## Worst case running time
+
+## Discussion of current proposal and suggestions for improvement
+
+
+# Part B:
+
+## Discussion of the current scheme
+this is using AEC using CBC mode for encryption, the badencrypt.py allows for inversions of message blocks and they are
+using Encrypt-and-Mac for their authentication scheme which is not secure if the attacker can change the M, he can
+change the hash.
+
+## Suggestions for improving the scheme
+sue GCM instead of CBC and use encrypt-then-mac for the authentication scheme

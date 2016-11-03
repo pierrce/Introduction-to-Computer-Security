@@ -1,0 +1,89 @@
+# Team members: UW ID #s and names - there is no special format for this.
+
+Alec Pierce - 9068068874
+Dan Hayes   - 9032348436
+
+# Trace 1: HTTP
+## Give three websites (domain Nname and IP addresses) visited from source IP address `192.168.0.100`
+
+206.16.237.210	www.shopbop.com
+198.105.251.25	www.bing.com
+206.16.237.206	www.eastdane.com
+
+## Give three search queries and the domain of the site for each query made from source IP address `192.168.0.100`
+
+bing.com - Madison Map
+/search?q=madison+map&go=&qs=n&form=QBLH&pq=madison+map&sc=8-5&sp=-1&sk=&cvid=21ab45dc55634583bed819be11051864
+
+bing.com - Chicago Metro
+/search?q=chicago+metro&go=%E6%8F%90%E4%BA%A4&qs=n&form=QBRE&pq=chicago+metro&sc=8-13&sp=-1&sk=&cvid=3dafaeb94bb04c35a9efa4621371beb1
+
+baidu.com - 来自星星的你
+/s?wd=来自星星的你&rsv_bp=0&ch=&tn=baidu&bar=&rsv_spt=3&ie=utf-8&rsv_sug3=14&rsv_sug4=794&rsv_sug1=3&rsv_sug2=0&inputT=2
+
+# Trace 2: FTP
+## What is the user name and password used to connect to the FTP server?
+
+username: shiningmoon
+8	1.222292	192.168.0.100	202.120.2.2	FTP	84	Request: USER shiningmoon
+
+password: public
+12	1.631494	192.168.0.100	202.120.2.2	FTP	79	Request: PASS public
+
+## List any (and all) files that were downloaded.
+
+dragon.zip
+ARP.java
+L2Switch.java
+phase1.html
+
+## List the full path for two files (in different directories) on the FTP server that were NOT downloaded.
+
+/phase1/StoreForwardingDatalink.java
+/TeNet/RESULT.xlsx
+
+# Trace 3: Traceroute
+## Briefly describe how the traceroute tool works including which network protocols are in use.
+
+Traceroute is a tool that provides the user with a list of the name/IP addresse pairs of the internet network nodes 
+from the calling computer and a designated destination address passed by opperand. 
+Traceroute works by sending UDP (User Datagram Protocol) packets with assending TTL(Time to Live) 
+values starting with the value 1. At each network node the UDP packet's TTL is decreased by one and once the TTL hits 
+0 the gateway returns a ICMP "time exceeded" reply. Tracetoute displays the number of hops(initial TTL value for that packet) 
+and the address of the gateway in order. This results in a trace the path from the sender to the eventual destination. 
+Traceroute dose this standard 30 times or until the destination is reached. The destination is reached when the calling system gets a 
+ICMP "port unreachable" reply. We get this "port unreachable" reply because Traceroute uses a unlikly to be used port, this works
+provided the deitination server admin is not a clod and uses the port that traceroute uses normally. The port can be changed 
+using the -p flag.
+
+## Give the source IP address that issued the traceroute command and the destination IP address.
+
+Source: 		192.168.0.100
+Destination:	74.125.225.46
+
+## List the IP addresses on the route between source and destination.
+
+Route: 	192.168.0.100 -> 192.168.0.1 -> 10.131.180.1 -> 96.34.20.20 -> 96.34.17.95 -> 96.34.16.112 -> 96.34.16.77 -> 96.34.2.4 -> 96.34.0.7 
+-> 96.34.0.9 -> 96.34.3.9 -> 96.34.152.30 -> 209.85.254.120 -> 209.85.250.28 -> 74.125.225.46
+
+# Trace 4: POP
+## What is the POP username and password?
+
+User: cs155@dummymail.com
+Pass: whitehat
+
+## How many emails are in the user’s mailbox?
+
+5 messages (2277 octets)
+
+## Give the contents of from, to, subject, and date for one email message.
+
+From: joe <cs155@dummymail.com>\r\n
+To: cs155@dummymail.com\r\n
+Subject: foobar\r\n
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed\r\n
+Date: Fri, 23 Apr 2010 08:20:52 -0700\r\n
+
+## What email client (application) and operating system is this person using to send and receive email?
+
+User-Agent: Thunderbird 2.0.0.23 (Windows/20090812)\r\n
